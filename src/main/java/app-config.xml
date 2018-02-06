@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="activeMqMessaging" class="com.cap.spring.domain.impl.ActiveMQMessaging" />
+	
+	<bean id="rsaEncryption" class="com.cap.spring.domain.impl.RSAEncryption" />
+	
+	<bean id="commmunication" class="com.cap.spring.Communication" >
+		<constructor-arg  ref = "rsaEncryption"></constructor-arg>
+		<!--  <property name="messaging" ref="activeMqMessaging" ></property> -->
+	</bean>
+		 
+	
+</beans>
